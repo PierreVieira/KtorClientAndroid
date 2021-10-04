@@ -2,12 +2,15 @@ package com.plcoding.ktorclientandroid.data.remote
 
 import com.plcoding.ktorclientandroid.data.remote.dto.PostRequest
 import com.plcoding.ktorclientandroid.data.remote.dto.PostResponse
+import dagger.hilt.android.scopes.ViewModelScoped
 import io.ktor.client.*
 import io.ktor.client.features.*
 import io.ktor.client.request.*
 import io.ktor.http.*
+import javax.inject.Inject
 
-class PostsServiceImpl(
+@ViewModelScoped
+class PostsServiceImplementation @Inject constructor(
     private val client: HttpClient
 ) : PostsService {
 
